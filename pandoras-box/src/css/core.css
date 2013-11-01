@@ -1,0 +1,68 @@
+body.start{
+	background-image: url('../../assets/img/bg-start.png');
+}
+
+body.start .container{
+	margin-top: 225px;
+}
+
+body img{
+	display: block;
+	margin: 0 auto;
+}
+
+body.start img{
+	width: 562px;
+}
+
+body.transition{
+	background-image: url('../../assets/img/bg-transition.png');
+}
+
+body.blank{
+	background-image: url('../../assets/img/bg-blank.png');
+}
+
+body.scenary{
+	background-image: url('../../assets/img/bg-scenary.png');
+}
+
+body.scenary .container{
+	margin-top: 235px;
+}
+
+body.scenary .row{
+	margin-bottom: 20px;
+}
+
+body.driveStyle{
+	background-image: url('../../assets/img/bg-drive-style.png');
+}
+
+body.music{
+	background-image: url('../../assets/img/bg-music.png');
+}
+
+body.lighting{
+	background-image: url('../../assets/img/bg-lighting.png');
+}
+
+body.finished{
+	background-image: url('../../assets/img/bg-finished.png');
+}
+
+#keepAlive{
+	display: none;
+}
+
+.container{
+	display: none;
+}
+
+#preload-images{
+	display: none;
+}
+
+.video img{
+	width: 640px;
+}

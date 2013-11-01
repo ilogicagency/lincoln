@@ -1,0 +1,69 @@
+label,
+th{
+	font-weight: bold;
+	text-align: left;
+	font-size: 16px;
+}
+
+body.index{
+	background-image: url('../../assets/img/bg-index.png');
+}
+
+body.index img{
+	margin-top: 100px;
+}
+
+body.register{
+	background-image: url('../../assets/img/bg-register.png');
+}
+
+body.register .container{
+	margin-top: 260px;
+}
+
+body.register input{
+	min-width: 70%;
+	border: 1px solid #666;
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 0;
+}
+
+input[type="submit"]{
+	width: 100%;
+	height: 120px;
+	background: #333;
+	margin-top: 20px;
+	color: #fff;
+	font-size: 24px;
+	font-weight: bold;
+	text-decoration: underline;
+}
+
+body.book{
+	background-image: url('../../assets/img/bg-features.png');
+}
+
+body.book #features{
+	/*display: none;*/
+}
+
+body.book #form{
+	display: none;
+	background: #000;
+}
+
+body.book p{
+	font-weight: bold;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+body.book button{
+	width: 100%;
+}
+
+body.thank-you{
+	background-image: url('../../assets/img/bg-thank-you.png');
+}
