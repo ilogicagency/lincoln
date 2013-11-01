@@ -2,6 +2,7 @@
 	$(document).ready(function() {
 		new App();
 	});
+	
 })(jQuery);
 
 (function($, window) {
