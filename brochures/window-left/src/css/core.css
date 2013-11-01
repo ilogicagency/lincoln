@@ -2,23 +2,23 @@ body {
   background: #000;
 }
 #core {
-  outline: 1px solid blue;
+  outline: 4px solid blue;
   position: relative;
   width: 1920px;
   height: 1080px;
 }
-.section {
+#core .section {
   position: absolute;
   display: none;
   width: 100%;
   height: 100%;
 }
-.section img {
+#core .section img {
   position: absolute;
   display: none;
   z-index: 0;
 }
-.btns {
+#core a {
   position: absolute;
   display: block;
   outline: 1px solid red;
@@ -26,19 +26,27 @@ body {
   height: 200px;
   z-index: 1;
 }
-.btns #up {
-  top: 200px;
-  left: 500px;
+#core a#up {
+  top: 0;
+  left: 770px;
+  height: 500px;
+  width: 680px;
 }
-.btns #right {
-  top: 200px;
-  left: 800px;
+#core a#right {
+  top: 0;
+  right: 0;
+  width: 455px;
+  height: 1080px;
 }
-.btns #down {
-  top: 600px;
-  left: 500px;
+#core a#down {
+  right: 469px;
+  bottom: 0;
+  width: 680px;
+  height: 560px;
 }
-.btns #left {
-  top: 200px;
-  left: 200px;
+#core a#left {
+  width: 755px;
+  top: 0;
+  left: 0;
+  height: 1080px;
 }
