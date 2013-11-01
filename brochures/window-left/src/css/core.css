@@ -2,7 +2,6 @@ body {
   background: #000;
 }
 #core {
-  outline: 4px solid blue;
   position: relative;
   width: 1920px;
   height: 1080px;
@@ -21,7 +20,6 @@ body {
 #core a {
   position: absolute;
   display: block;
-  outline: 1px solid red;
   width: 200px;
   height: 200px;
   z-index: 1;
