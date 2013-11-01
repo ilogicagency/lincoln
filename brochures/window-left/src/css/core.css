@@ -1,51 +1,44 @@
-body{
-	background: #000;
+body {
+  background: #000;
 }
-
-#core{outline: 1px solid blue;
-	position: relative;
-	width: 1920px;
-	height: 1080px;
+#core {
+  outline: 1px solid blue;
+  position: relative;
+  width: 1920px;
+  height: 1080px;
 }
-
-.section{
-	position: absolute;
-	display: none;
-	width: 100%;
-	height: 100%;
+.section {
+  position: absolute;
+  display: none;
+  width: 100%;
+  height: 100%;
 }
-
-.section img{
-	position: absolute;
-	display: none;
-	z-index: 0;
+.section img {
+  position: absolute;
+  display: none;
+  z-index: 0;
 }
-
-.btns{
-	position: absolute;
-	display: block;
-	outline: 1px solid red;
-	width: 200px;
-	height: 200px;
-	z-index: 1;
+.btns {
+  position: absolute;
+  display: block;
+  outline: 1px solid red;
+  width: 200px;
+  height: 200px;
+  z-index: 1;
 }
-
-#up{
-	top: 200px;
-	left: 500px;
+.btns #up {
+  top: 200px;
+  left: 500px;
 }
-
-#right{
-	top: 200px;
-	left: 800px;
+.btns #right {
+  top: 200px;
+  left: 800px;
 }
-
-#down{
-	top: 600px;
-	left: 500px;
+.btns #down {
+  top: 600px;
+  left: 500px;
 }
-
-#left{
-	top: 200px;
-	left: 200px;
+.btns #left {
+  top: 200px;
+  left: 200px;
 }
