@@ -9,9 +9,9 @@
 		this.section = 0;
 		this.slide = 0;
 		this.slides = [
-			['lincoln-touchbrochure-design-exteriorleds.png', 'lincoln-touchbrochure-design-sidemirrors.png'],
-			['features1.png', 'features2.png'],
-			['performance1.png', 'performance2.png']
+			['lincoln-touchbrochure-design-exteriorleds.png', 'lincoln-touchbrochure-design-sidemirrors.png', 'lincoln-touchbrochure-design-splitgrille.png', 'lincoln-touchbrochure-design-therear.png'],
+			['lincoln-touchbrochure-features-ambientlighting.png', 'lincoln-touchbrochure-features-drivestyle.png', 'lincoln-touchbrochure-features-pushshift.png', 'lincoln-touchbrochure-features-sync.png'],
+			['lincoln-touchbrochure-performance-drivecontrol.png', 'lincoln-touchbrochure-performance-freestandingoptions.png', 'lincoln-touchbrochure-performance-handling.png', 'lincoln-touchbrochure-performance-performancespecs.png']
 		];
 
 		this.__construct();
@@ -32,10 +32,11 @@
 				var id = $(this).attr('id');
 
 				if (id == 'up') {
-
+					scope.slide++;
+					if (scope.slide >= scope.slides[scope.section].length)
+						scope.slide = 0;
 				} else if (id == 'right') {
 					scope.slide++;
-
 					if (scope.slide >= scope.slides[scope.section].length)
 						scope.slide = 0;
 				} else if (id == 'down') {
