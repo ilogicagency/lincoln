@@ -28,9 +28,9 @@ body {
 }
 #core a#up {
   top: 0;
-  left: 770px;
-  height: 500px;
-  width: 680px;
+  left: 865px;
+  height: 625px;
+  width: 585px;
 }
 #core a#right {
   top: 0;
@@ -39,13 +39,13 @@ body {
   height: 1080px;
 }
 #core a#down {
-  right: 469px;
+  left: 865px;
   bottom: 0;
-  width: 680px;
-  height: 560px;
+  width: 585px;
+  height: 430px;
 }
 #core a#left {
-  width: 755px;
+  width: 850px;
   top: 0;
   left: 0;
   height: 1080px;

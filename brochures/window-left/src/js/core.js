@@ -32,20 +32,39 @@
 				var id = $(this).attr('id');
 
 				if (id == 'up') {
+
 					scope.slide++;
+					console.log(scope);
+
 					if (scope.slide >= scope.slides[scope.section].length)
 						scope.slide = 0;
+
 				} else if (id == 'right') {
-					scope.slide++;
-					if (scope.slide >= scope.slides[scope.section].length)
-						scope.slide = 0;
+
+					scope.section++;
+					console.log(scope);
+
+					if (scope.section >= scope.slides[scope.section].length)
+						scope.section = 0;
+
 				} else if (id == 'down') {
+
+					scope.slide--;
+					console.log(scope);
+
+					if (scope.slide <= 0)
+						scope.slide = scope.slides[scope.section].length;
 
 				} else if (id == 'left') {
 
+					scope.section--;
+					console.log(scope);
+
+					if (scope.section <= 0)
+						scope.section = scope.slides[scope.section].length;
+
 				}
 				//reset to zero if count up/down OR left/right reaches array limit
-
 				scope.choice();
 			});
 		},
