@@ -20,30 +20,31 @@ body {
 #core a {
   position: absolute;
   display: block;
+  outline: 1px solid red;
   width: 200px;
   height: 200px;
   z-index: 1;
 }
 #core a#up {
   top: 0;
-  left: 865px;
+  right: 865px;
   height: 625px;
   width: 585px;
 }
 #core a#right {
   top: 0;
   right: 0;
-  width: 455px;
+  width: 850px;
   height: 1080px;
 }
 #core a#down {
-  left: 865px;
+  right: 865px;
   bottom: 0;
   width: 585px;
   height: 430px;
 }
 #core a#left {
-  width: 850px;
+  width: 455px;
   top: 0;
   left: 0;
   height: 1080px;
