@@ -33,35 +33,27 @@
 				var id = $(this).attr('id');
 
 				if (id == 'up') {
-
 					scope.slide--;
-					
+
 					if (scope.slide < 0)
 						scope.slide = scope.slides[scope.section].length - 1;
-
 				} else if (id == 'right') {
-
 					scope.section++;
-					
+
 					if (scope.section >= scope.slides.length)
 						scope.section = 0;
-
 				} else if (id == 'down') {
-
 					scope.slide++;
-					
+
 					if (scope.slide >= scope.slides[scope.section].length)
 						scope.slide = 0;
-
 				} else if (id == 'left') {
-
 					scope.section--;
-					
+
 					if (scope.section < 0)
 						scope.section = scope.slides.length - 1;
-
 				}
-				//reset to zero if count up/down OR left/right reaches array limit
+
 				scope.choice();
 			});
 		},
