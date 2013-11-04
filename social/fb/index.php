@@ -1,5 +1,4 @@
 <?php
-
 function fb_url_direct($facebook){
 	$loginUrl = $facebook->getLoginUrl(array(
 		"canvas"		=> 	1,
@@ -33,15 +32,12 @@ require '../config.php';
 require '../libs/facebook/src/facebook.php';
 require '../classes/main.class.php';
 
-
 $main = new main();
 $facebook = new Facebook(array('appId'  => APP_ID,'secret' => APP_SECRET));
 
 // get the users unique FB ID // get these details first else the other methods will overwrite ;)
 $fb_id = $facebook->getUser();
 $access_token = $facebook->getAccessToken();
-
-
 
 //1st check if this is the first step, if so make sure everything else is cleared...including loggin anyone out if they are logged in...
 if(!empty($_REQUEST['start'])){
@@ -71,6 +67,7 @@ if(empty($_SESSION['user'])){
        . "&fb_exchange_token=" . $access_token;
     $response = file_get_contents($token_url);
     $params = NULL;
+    
     parse_str($response, $params);
 	//---------------------
 	
@@ -98,7 +95,6 @@ if($_SESSION['user']){
 	$_SESSION['user']['online_uid'] = $uid;
 
 	$logout_array["next"] = APP_SOURCE_URL."redirect.php?ip=" . SERVER_IP;
-	//
 }
 
 //now log the user out and redirect them

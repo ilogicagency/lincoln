@@ -1,0 +1,68 @@
+body{
+	background: #000;
+}
+
+#core{
+	 
+	// outline: 4px solid blue;
+	
+	position: relative;
+	width: 1920px;
+	height: 1080px;
+
+	// Sections
+	.section{
+		position: absolute;
+		display: none;
+		width: 100%;
+		height: 100%;
+
+		img{
+			position: absolute;
+			display: none;
+			z-index: 0;
+		}
+	}
+
+	// Navigation
+	a{
+
+		position: absolute;
+		display: block;
+		// outline: 1px solid red;
+		width: 200px;
+		height: 200px;
+		z-index: 1;
+
+
+		// Buttons
+		&#up{
+			top: 0;
+			left: 865px;
+			height: 625px;
+			width: 585px;
+		}
+
+		&#right{
+			top:0;
+			right:0;
+			width:455px;
+			height:1080px;
+		}
+
+		&#down{
+			left: 865px;
+			bottom: 0;
+			width: 585px;
+			height: 430px;
+		}
+
+		&#left{
+			width:850px;
+			top: 0;
+			left: 0;
+			height:1080px;
+		}
+	}
+
+}
