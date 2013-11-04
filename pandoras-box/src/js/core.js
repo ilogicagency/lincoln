@@ -14,7 +14,7 @@
 			Dubai: {seek: '00:02:00:00', delay: 15800},
 			France: {seek: '00:03:00:00', delay: 15800},
 			London: {seek: '00:04:00:00', delay: 15800},
-			CapeTownDriveStyle: {seek: '00:05:00:00', delay: 61000},
+			CapeTownDriveStyle: {seek: '00:05:00:00', delay: 60800},
 			CapeTownDriveStyleClassical: {seek: '00:06:30:00', delay: 38200},
 			CapeTownDriveStyleClassicalEndeavour: {seek: '00:08:00:00', delay: 53500},
 			CapeTownDriveStyleClassicalDesert: {seek: '00:09:30:00', delay: 53500},
@@ -27,7 +27,7 @@
 			CapeTownDriveStyleArabicEndeavour: {seek: '00:20:00:00', delay: 53500},
 			CapeTownDriveStyleArabicDesert: {seek: '00:21:30:00', delay: 53500},
 			CapeTownDriveStyleArabicCalypso: {seek: '00:23:00:00', delay: 53500},
-			DubaiDriveStyle: {seek: '00:26:00:00', delay: 61000},
+			DubaiDriveStyle: {seek: '00:26:00:00', delay: 60800},
 			DubaiDriveStyleClassical: {seek: '00:27:30:00', delay: 38200},
 			DubaiDriveStyleClassicalEndeavour: {seek: '00:29:00:00', delay: 53500},
 			DubaiDriveStyleClassicalDesert: {seek: '00:30:35:00', delay: 53500},
@@ -40,7 +40,7 @@
 			DubaiDriveStyleArabicEndeavour: {seek: '00:41:00:00', delay: 53500},
 			DubaiDriveStyleArabicDesert: {seek: '00:42:30:00', delay: 53500},
 			DubaiDriveStyleArabicCalypso: {seek: '00:44:00:00', delay: 53500},
-			FranceDriveStyle: {seek: '00:47:00:00', delay: 61000},
+			FranceDriveStyle: {seek: '00:47:00:00', delay: 60800},
 			FranceDriveStyleClassical: {seek: '00:48:30:00', delay: 38200},
 			FranceDriveStyleClassicalEndeavour: {seek: '00:50:00:00', delay: 53500},
 			FranceDriveStyleClassicalDesert: {seek: '00:51:30:00', delay: 53500},
@@ -53,7 +53,7 @@
 			FranceDriveStyleArabicEndeavour: {seek: '01:02:00:00', delay: 53500},
 			FranceDriveStyleArabicDesert: {seek: '01:03:30:00', delay: 53500},
 			FranceDriveStyleArabicCalypso: {seek: '01:05:00:00', delay: 53500},
-			LondonDriveStyle: {seek: '01:08:00:00', delay: 61000},
+			LondonDriveStyle: {seek: '01:08:00:00', delay: 60800},
 			LondonDriveStyleClassical: {seek: '01:09:30:00', delay: 38200},
 			LondonDriveStyleClassicalEndeavour: {seek: '01:11:00:00', delay: 53500},
 			LondonDriveStyleClassicalDesert: {seek: '01:12:30:00', delay: 53500},
@@ -126,7 +126,7 @@
 				}
 
 				if (scope.sectionCurrent == 4) {
-					scope.noiseTimer.start(2000, scope.videoPlay, scope, {video: 'noise-control'});
+					scope.noiseTimer.start(4000, scope.videoPlay, scope, {video: 'noise-control'});
 					scope.parkTimer.start(30000, scope.videoPlay, scope, {video: 'park-assist'});
 				}
 
