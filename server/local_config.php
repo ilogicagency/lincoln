@@ -14,8 +14,8 @@ define("LOCAL_DB_PASS", "");
 define("SERVER_IP", '2.1.1.5');
 define("PANDORA_IP", "2.1.1.7:6214/lincoln/");
 
-define("FB_REGISTER_URL", "https://www.ilogicde.co.za/lincoln/fb/");
-define("TWITTER_REGISTER_URL", "https://www.ilogicde.co.za/lincoln/twitter/");
+define("FB_REGISTER_URL", "https://ilogicde.co.za/lincoln/fb/");
+define("TWITTER_REGISTER_URL", "https://ilogicde.co.za/lincoln/twitter/");
 
 define("IMAGE_PATH", "C:/wamp/www/lincoln/server/photos/");
 
