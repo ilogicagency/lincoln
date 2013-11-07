@@ -2,11 +2,15 @@
 
 session_start();
 
+if(isset($_GET['server']))
+	$_SESSION['ip'] = $_GET['server'];
+
 //database settings
 define("DB_HOST","dedi128.jnb2.host-h.net");
 define("DB_NAME","lincoln_mkz");
 define("DB_LOGIN","ilogicy_116");
 define("DB_PASS","NCmHAyk8");
+//define("SERVER_IP", $_SESSION['ip']);
 define("SERVER_IP", '2.1.1.5');
 
 define("REG_URL", "http://".SERVER_IP."/lincoln/server");

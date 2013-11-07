@@ -102,7 +102,6 @@ class db {
 			designation,
 			current_car,
 			model_of_current_car,
-			delivery_address_uae_only,
 			booking
 			) VALUES (
 			'" . mysql_real_escape_string($data['first_name']) . "',
@@ -115,28 +114,23 @@ class db {
 			'" . mysql_real_escape_string($data['designation']) . "',
 			'" . mysql_real_escape_string($data['car']) . "',
 			'" . mysql_real_escape_string($data['model']) . "',
-			'" . mysql_real_escape_string($data['del_address']) . "',
 			$book
 			)", $this->db_link);
-
-		return mysql_insert_id();
 	}
 
 	public function profileExists($email = '') {
-		$query = mysql_query("SELECT id FROM profiles WHERE email_address = '$email' ORDER BY id DESC", $this->db_link);
+		$query = mysql_query("SELECT * FROM profiles WHERE email_address = '$email' ORDER BY id DESC", $this->db_link);
 
-		if ($query) {
+		if (mysql_num_rows($query) != 0) {
 			$data = mysql_fetch_assoc($query);
 
-			return $data['id'];
+			return $data;
 		}
-		
-		return null;
 	}
 
 	public function save_user($usr_arr) {
-		//is the user in here already?
-		$in_db_user = $this->get_user($usr_arr['uid']);
+		$in_db_user = $this->userExists($usr_arr['email']);
+
 		if (empty($in_db_user)) {
 			if (!isset($usr_arr['age'])) {
 				$usr_obj['age'] = '';
@@ -170,6 +164,14 @@ class db {
 		}
 	}
 
+	public function userTokenUpdate($usr_arr) {
+		mysql_query("UPDATE users SET
+				social_id = '" . $usr_arr['social_id'] . "',
+				social_token = '" . $usr_arr['social_token'] . "', 
+				social_type = '" . $usr_arr['social_type'] . "'
+				WHERE email = '" . $usr_arr['email'] . "'", $this->db_link);
+	}
+
 	public function userSaveBypassSocial($usr_arr) {
 		mysql_query("INSERT INTO users (
 				email,
@@ -184,17 +186,15 @@ class db {
 				'" . $usr_arr['number'] . "',
 				'bypass'
 				)", $this->db_link);
-
-		return mysql_insert_id();
 	}
 
 	public function userExists($email = '') {
-		$query = mysql_query("SELECT uid FROM users WHERE email = '$email'", $this->db_link);
+		$query = mysql_query("SELECT * FROM users WHERE email = '$email'", $this->db_link);
 
 		if ($query) {
 			$data = mysql_fetch_assoc($query);
 
-			return $data['uid'];
+			return $data;
 		}
 	}
 

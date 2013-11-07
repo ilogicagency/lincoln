@@ -10,8 +10,11 @@ session_start();
 if (empty($_REQUEST['live_id']))
 	header("Location: " . REG_URL . "?error=" . urlencode("Error: user id was not passed locally, please retry..."));
 
-$_SESSION['uid'] = $_REQUEST['live_id'];
-$_SESSION['bypass'] = $_REQUEST['live_id'];
+$_SESSION['live_id'] = $_GET['live_id'];
+$_SESSION['bypass'] = '';
+
+if ($_GET['live_id'] == 'bypass')
+	$_SESSION['bypass'] = 'bypass';
 
 try {
 	$local_db = new db(false);
@@ -40,12 +43,12 @@ if (!empty($_POST['submit'])) {
 			$user_arr['email'] = $_POST['email'];
 			$user_arr['number'] = $_POST['number'];
 
-			$userId = $local_db->userSaveBypassSocial($user_arr);
-
-			$_SESSION['uid'] = $userId;
-		} else {
-			$_SESSION['uid'] = $userId;
+			$local_db->userSaveBypassSocial($user_arr);
 		}
+
+		$userId = $local_db->userExists($_POST['email']);
+
+		$_SESSION['uid'] = $userId['uid'];
 	}
 
 	$userSave = array();
@@ -60,9 +63,12 @@ if (!empty($_POST['submit'])) {
 	$userSave['designation'] = $_POST['designation'];
 	$userSave['car'] = (($_POST['cur_car'] == 'Other')) ? $_POST['other_car'] : $_POST['cur_car'];
 	$userSave['model'] = $_POST['model_year'];
-	$userSave['del_address'] = $_POST['del_address'];
 
-	$_SESSION['profileId'] = $local_db->profileSave($userSave);
+	$local_db->profileSave($userSave);
+
+	$profileExists = $local_db->profileExists($_POST['email']);
+	$_SESSION['profileId'] = $profileExists['id'];
+
 	header("Location: " . 'http://' . PANDORA_IP . "index.html");
 	exit;
 }
@@ -74,15 +80,26 @@ try {
 }
 
 if ($_GET['live_id'] != 'bypass') {
-	$user_arr = $live_db->get_user($_SESSION['uid']);
+	$user_arr = $live_db->get_user($_GET['live_id']);
 
 	if (empty($user_arr)) {
 		header("Location: " . REG_URL . "?error=" . urlencode("Error: user not found, please retry..."));
 		exit;
 	}
 
+	$localUser = $local_db->userExists($user_arr['email']);
+
 	//insert the user details in the local db
-	$local_db->save_user($user_arr);
+	if (empty($localUser)) {
+		$local_db->save_user($user_arr);
+		$localUser = $local_db->userExists($user_arr['email']);
+
+		$_SESSION['uid'] = $localUser['uid'];
+	} else {
+		$local_db->userTokenUpdate($user_arr);
+
+		$_SESSION['uid'] = $localUser['uid'];
+	}
 }
 ?>
 

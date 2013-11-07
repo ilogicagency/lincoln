@@ -7,6 +7,9 @@ require('classes/db.class.php');
 
 session_start();
 
+if (!isset($_SESSION['bypass']))
+	$_SESSION['bypass'] = '';
+
 try {
 	$local_db = new db(false);
 } catch (Exception $e) {
@@ -150,7 +153,7 @@ if ($_POST) {
 						$(this).hide();
 					});
 
-					<?php if ($_SESSION['bypass'] != 'bypass') { ?>
+<?php if ($_SESSION['bypass'] != 'bypass') { ?>
 						var scenary = '<?php echo $choices->scenary ?>';
 
 						$.ajax({
@@ -163,7 +166,7 @@ if ($_POST) {
 							$('#synchronising').hide();
 							$('#features').fadeIn();
 						});
-					<?php } ?>
+<?php } ?>
 				});
 			})(jQuery);
 		</script>

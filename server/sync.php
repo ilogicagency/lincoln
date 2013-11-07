@@ -33,7 +33,7 @@ switch ($_GET['scene']) {
 		$image = 'dubai.png';
 }
 
-$local_db->sql_query("INSERT INTO photos (user_id, image_name, uploaded, synced) VALUES ('" . $_SESSION['uid'] . "', '" . $image . "', 'true', 'false')");
+$local_db->sql_query("INSERT INTO photos (user_id, image_name, uploaded, synced) VALUES ('" . $_SESSION['live_id'] . "', '" . $image . "', 'true', 'false')");
 
 //get all the unsynced photos
 $photos = json_decode(file_get_contents('http://' . SERVER_IP . '/lincoln/server/sync_server.php?action=photos'));
@@ -47,7 +47,7 @@ foreach ($photos as $photo) {
 			'scene' => $_GET['scene'],
 			'file' => '@' . IMAGE_PATH . $image
 		);
-		curl_setopt($ch, CURLOPT_URL, 'https://www.ilogic.co.za/lincoln/photo_post.php');
+		curl_setopt($ch, CURLOPT_URL, 'https://ilogicde.co.za/lincoln/photo_post.php');
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 		curl_setopt($ch, CURLOPT_BINARYTRANSFER, true);
 		curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_ANY);

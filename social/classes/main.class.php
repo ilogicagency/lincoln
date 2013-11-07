@@ -45,6 +45,14 @@ class main {
 		return $return_arr;
 	}
 	
+	public function userTokenUpdate($data){
+		mysql_query("UPDATE users SET
+			social_id = '" . $data['social_id'] . "',
+			social_token = '" . $data['social_token'] . "',
+			social_type = '" . $data['social_type'] . "'
+			WHERE email = '" . $data['email'] . "'");
+	}
+	
 	public function save_user($usr_obj=array(), $type){
 			if(	
 				empty($usr_obj['social_id'])
